@@ -5,15 +5,16 @@ Aplikasi web belajar SKD CPNS 2026 lengkap sesuai kisi-kisi KemenPAN-RB terbaru 
 ## Menjalankan Secara Lokal
 
 ```bash
-npm install
+npm install --legacy-peer-deps
 npm run dev
 ```
 
 ## Deploy ke GitHub Pages
 
-Repository ini sudah dikonfigurasi untuk langsung di-deploy ke **GitHub Pages** menggunakan GitHub Actions:
+Aplikasi ini mendukung kedua metode deploy GitHub Pages agar tidak terjadi halaman kosong (blank putih):
 
-1. Push seluruh kode ke branch `main` atau `master` di repository GitHub Anda.
-2. Buka tab **Settings → Pages** pada repository GitHub Anda.
-3. Pada bagian **Build and deployment → Source**, pilih **GitHub Actions**.
-4. Workflow `.github/workflows/deploy.yml` akan otomatis berjalan, mem-build proyek ke folder `dist/`, dan mempublikasikannya ke URL GitHub Pages Anda (`https://<username>.github.io/<nama-repo>/`).
+1. **GitHub Actions (Disarankan)**
+   - Buka **Settings → Pages → Source**, pilih **GitHub Actions**.
+   - Workflow `.github/workflows/deploy.yml` otomatis melakukan build ke `dist/` dan mempublikasikan situs saat push ke `main` atau `master`.
+2. **Deploy dari Branch (`main`)**
+   - Jika Anda memilih **Deploy from a branch** (`main /docs` maupun `main /(root)`), folder `docs/` sudah berisi hasil build siap pakai beserta `.nojekyll` dan `404.html`.

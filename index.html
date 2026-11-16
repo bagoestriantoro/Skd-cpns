@@ -25,5 +25,18 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', function () {
+        var root = document.getElementById('root');
+        var isRawSource = !!document.querySelector('script[src="/src/main.tsx"]');
+        if (isRawSource && root && root.childElementCount === 0) {
+          setTimeout(function () {
+            if (root.childElementCount === 0 && window.location.pathname.indexOf('/docs') === -1) {
+              window.location.replace('./docs/');
+            }
+          }, 800);
+        }
+      });
+    </script>
   </body>
 </html>
