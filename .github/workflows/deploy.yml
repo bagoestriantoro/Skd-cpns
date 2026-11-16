@@ -25,19 +25,25 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --no-audit --no-fund
 
       - name: TypeScript check
         run: npm run lint
 
-      - name: Build production bundle
-        run: npm run build
-
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
+
+      - name: Build production bundle
+        run: |
+          BASE="${{ steps.pages.outputs.base_path }}"
+          export VITE_BASE_PATH="${BASE%/}/"
+          npm run build
+
+      - name: Add SPA 404 fallback
+        run: cp dist/index.html dist/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
