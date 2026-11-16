@@ -1,4 +1,8 @@
 import { CategoryMeta, TestCategory } from '../types/skd';
+import heroMascotImg from '../assets/images/hero_mascot_cpns_1794541892611.jpg';
+import cardTwkImg from '../assets/images/card_twk_nasionalisme_1794541894337.jpg';
+import cardTiuImg from '../assets/images/card_tiu_logika_1794541894246.jpg';
+import cardTkpImg from '../assets/images/card_tkp_pelayanan_1794541895647.jpg';
 
 export const SKD_EXAM_OVERVIEW = {
   regulationReference: 'PermenPAN-RB No. 6 Tahun 2024 & KepmenPAN-RB No. 321 Tahun 2024 (Acuan SKD CPNS 2026)',
@@ -23,7 +27,7 @@ export const CATEGORY_META: Record<TestCategory, CategoryMeta> = {
     accentSoft: 'bg-rose-50',
     accentText: 'text-rose-700',
     accentBorder: 'border-rose-500',
-    illustrationPath: '/src/assets/images/card_twk_nasionalisme_1794541894337.jpg',
+    illustrationPath: cardTwkImg,
   },
   [TestCategory.TIU]: {
     id: TestCategory.TIU,
@@ -39,7 +43,7 @@ export const CATEGORY_META: Record<TestCategory, CategoryMeta> = {
     accentSoft: 'bg-blue-50',
     accentText: 'text-blue-700',
     accentBorder: 'border-blue-600',
-    illustrationPath: '/src/assets/images/card_tiu_logika_1794541894246.jpg',
+    illustrationPath: cardTiuImg,
   },
   [TestCategory.TKP]: {
     id: TestCategory.TKP,
@@ -55,8 +59,8 @@ export const CATEGORY_META: Record<TestCategory, CategoryMeta> = {
     accentSoft: 'bg-emerald-50',
     accentText: 'text-emerald-700',
     accentBorder: 'border-emerald-600',
-    illustrationPath: '/src/assets/images/card_tkp_pelayanan_1794541895647.jpg',
+    illustrationPath: cardTkpImg,
   },
 };
 
-export const HERO_MASCOT_PATH = '/src/assets/images/hero_mascot_cpns_1794541892611.jpg';
+export const HERO_MASCOT_PATH = heroMascotImg;
